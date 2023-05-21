@@ -1,10 +1,10 @@
-# Introduction
+# 1. Introduction
 
 This project is written to test another project about monitoring Linux kernel indices, a assignment of Software Testing from College of Software, NKU.
 
 Tested Project: [https://github.com/Asher459/ST_lab](https://github.com/Asher459/ST_lab)
 
-## 实验目的
+## 1.1 实验目的
 
 1. 测试系统中的各个功能模块是否满足项目要求，并测试是否存在 bug。预期达到能够使系统进行快速的改进和系统的提高。为了在软件投入真实场景运行之前，尽可能多地发现系统的错误;
 
@@ -14,15 +14,15 @@ Tested Project: [https://github.com/Asher459/ST_lab](https://github.com/Asher459
 
 4. 确保系统是健壮的和适应环境的。
 
-## 实验对象
+## 1.2 实验对象
 
 Linux主机eBPF监控。
 
-## 实验任务
+## 1.3 实验任务
 
 开发组需要提供部署说明，接口说明，使用说明等必要的系统使用说明;测试组需要充分 了解测试对象，仔细阅读、分析系统使用说明和项目实践要求，对待测系统的部署、功能. 性能等进行分析，制订测试计划。
 
-## 实验内容
+## 1.4 实验内容
 
 1. 组内交流。阅读、讨论系统使用说明，分析、研究待测系统;
 
@@ -38,7 +38,7 @@ Linux主机eBPF监控。
 
 8. 完成里程碑测试工作后，根据测试结果和缺陷记录，编写测试报告。
 
-## 实验要求
+## 1.5 实验要求
 
 实验测试应包括的内容，但不限于:
 
@@ -49,15 +49,15 @@ Linux主机eBPF监控。
 4. 测试资源配置:各测试阶段的任务、所需的资源;
 5. 测试结果记录:各测试阶段的测试案例、缺陷说明等。
 
-# Procedures
+# 2. Procedures
 
-## (1) 部署测试
+## 2.1 部署测试
 
-## (2) 功能测试
+## 2.2 功能测试
 
-## (3) 单元测试
+## 2.3 单元测试
 
-## (4) 性能测试
+## 2.4 性能测试
 
 # Usage
 
