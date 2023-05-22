@@ -157,7 +157,7 @@ Python中常用的单元测试框架：
 2. 使用测试工具，对每个测试用例进行测试，记录测试覆盖率、通过和缺陷情况;
 3. 完成测试报告的单元测试部分，主要包括测试覆盖率、测试用例、缺陷情况等。
 
-### 2.3.5 结果展示
+### 2.3.5 代码分析
 
 分析 `template.h` 和 `template.c` 文件功能如下：
 
@@ -379,6 +379,21 @@ int trace_tcp_connect(struct pt_regs *ctx) {
 
 char _license[] SEC("license") = "GPL";
 ```
+
+### 2.3.6 单元测试及结果
+
+使用unittest对生成可执行的c文件进行单元测试，测试过程陈述和结果如下。
+
+To unit test `template.h` and `template.c` using Python, you can use the `unittest` module in Python to write test cases.
+
+Here are the general steps to follow:
+
+1. Write test cases that exercise the functionality of the code. This may involve creating some test data to use in the tests.
+2. Import the code into the test module using the `import` statement.
+3. Write test methods that call the functions in the code and compare the expected results with the actual results using assertions.
+4. Use the `unittest` module's test runner to run the test methods.
+
+This test case creates a trace_event_raw_sched_process_exec object and some test data, mocks the BPF functions, and calls the handle_exec function. It then checks that the event was added to the ring buffer correctly.
 
 ## 2.4 性能测试
 
