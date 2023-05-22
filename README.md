@@ -144,7 +144,7 @@ Use script: `./src/function.sh` to get result.
 
 Python中常用的单元测试框架：
 
-- unittest
+- **unittest**
 - pytest
 
 ### 2.3.3 测试任务
@@ -384,9 +384,7 @@ char _license[] SEC("license") = "GPL";
 
 使用unittest对生成可执行的c文件进行单元测试，测试过程陈述和结果如下。
 
-To unit test `template.h` and `template.c` using Python, you can use the `unittest` module in Python to write test cases.
-
-Here are the general steps to follow:
+(1) To unit test `template.h` and `template.c` using Python, you can use the `unittest` module in Python to write test cases. Here are the general steps to follow:
 
 1. Write test cases that exercise the functionality of the code. This may involve creating some test data to use in the tests.
 2. Import the code into the test module using the `import` statement.
@@ -395,8 +393,61 @@ Here are the general steps to follow:
 
 This test case creates a trace_event_raw_sched_process_exec object and some test data, mocks the BPF functions, and calls the handle_exec function. It then checks that the event was added to the ring buffer correctly.
 
+(2) To unit test `tcp.h` and `tcp.c` using Python, you can use the `unittest` module in Python to write test cases. Here are the general steps to follow:
+
 ## 2.4 性能测试
+
+### 2.4.1 测试目的
+
+1. 掌握性能测试原理、过程和测试设计方法;
+2. 对系统进行性能测试，评估系统在不同负载情况下的性能表现。
+
+### 2.4.2 测试工具
+
+**JMeter:** 是一个开源的性能测试工具，它可以对各种不同类型的应用进行性能测试，包括 Web 应用、数据库、FTP、Web Services 等。JMeter 支持多线程测试，并可以模拟多种 不同的用户行为和负载情况，可以评估系统在不同负载下的性能表现。JMeter 具有易学易用、功能强大、可扩展性好等特点，可以在不同的操作系统平台上 运行，并支持多种不同的语言和插件，可以满足不同用户的需求。
+
+JMeter 主要有以下功能：
+1. 负载测试:可以模拟多种不同的用户行为和负载情况，评估系统在不同负载下的性能表现。
+2. 功能测试:可以对应用的各项功能进行测试，并支持多种不同类型的协议，包括 HTTP、FTP、JDBC、SMTP 等。
+3. 报告生成:可以生成各种类型的测试报告，包括 HTML、XML、CSV 等格式，帮助用户更好地了解测试结果和性能瓶颈。
+
+安装参考文档如下：
+
+- [Official Document](https://jmeter.apache.org/usermanual/get-started.html)
+- [https://blog.csdn.net/Deng872347348/article/details/126953048](https://blog.csdn.net/Deng872347348/article/details/126953048)
+- [JMeter and Selunium Configuration Blog](https://www.baeldung.com/selenium-jmeter)
+
+### 2.4.3 测试任务
+
+针对测试对象，按照课程实践说明进行性能测试，测试范围覆盖所有待测功能。采用性能测试方法，执行测试、并记录测试过程、结果，完成测试报告的性能测试部分。
+
+### 2.4.4 测试内容与步骤
+
+1. 安装配置 JMeter，使用 JMeter GUI 编写并调试测试脚本。(可参照附件中对百度搜索的测试代码块编写对被测系统的测试脚本文件)
+2. 设置 JMeter 线程数，使用 JMeter CLI 完成测试，生成 results.txt 以及 web report
+3. 完成测试报告的性能测试部分，主要包括测试过程、测试结果、缺陷情况等。
+
+### 2.4.5 结果展示
+
+The installation is only about JMeter, for the sake that web end is not avaible for the test repo.
 
 # 3. Usage
 
 Explain how to use script codes to accomplish unit and performance tests.
+
+```bash
+# Enable execution permission.
+chmod +x ./src/*
+
+# 1. Deploy test
+./src/deploy.sh
+
+# 2. Function test
+./src/function.sh
+
+# 3. Unit test
+python3 ./src/unittest1.py
+python3 ./src/unittest2.py
+
+# 4. Performance test
+```

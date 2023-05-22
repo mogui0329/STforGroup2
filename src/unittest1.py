@@ -2,6 +2,9 @@ import unittest
 from ctypes import *
 from template import *
 
+# This is used to test `template.h` and `template.c`.
+# Author: zhsh.
+
 
 class TestTemplate(unittest.TestCase):
     """_summary_
