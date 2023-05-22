@@ -2,7 +2,9 @@
 
 This project is written to test another project about monitoring Linux kernel indices, a assignment of Software Testing from College of Software, NKU.
 
-Tested Project: [https://github.com/Asher459/ST_lab](https://github.com/Asher459/ST_lab)
+Old Tested Project: [https://github.com/Asher459/ST_lab](https://github.com/Asher459/ST_lab)
+New Tested Project: [https://github.com/Asher459/st_eunomia](https://github.com/Asher459/st_eunomia)
+Original Tested Project: [https://github.com/eunomia-bpf/eunomia-template](https://github.com/eunomia-bpf/eunomia-template)
 
 ## 1.1 实验目的
 
@@ -42,7 +44,51 @@ Linux主机eBPF监控。
 
 # 2. Procedures
 
+Explain the procedures unfolded for software testing as well as details inside each procedure.
+
 ## 2.1 部署测试
+
+### 2.1.1 测试目的
+
+为了完成软件测试工作所必需的计算机硬件、软件、网络设备等的总称，确定系统是否成功安装 / 部署。稳定和可控的测试环境，可以使测试人员花费较少的时间就完成测 试用例的执行，无需为测试用例、测试过程的维护花费额外的时间，并且可以保证每一个 被提交的缺陷都可以在任何时候被准确的重现。
+
+### 2.1.2 测试任务
+
+- 由开发组提供尽可能详尽的部署说明，针对测试对象，基于部署说明进行部署测试；
+- 测试能否成功部署系统，以完成后续测试。并记录测试过程、结果，完成测试报告的部署测试部分。
+
+### 2.1.3 测试内容与步骤
+
+1. 利用人工审查或评估等方法来验证部署说明是否完整、准确; 
+2. 验证部署过程中异常情况的处理是否合理、准确; 
+3. 验证部署后，系统是否能够正常运行;
+4. 完成测试报告的部署测试部分，主要包括测试过程、测试难点、异常情况等。
+
+### 2.1.4 结果展示
+
+Dependencies:
+- docker, container: ghcr.io/eunomia-bpf/eunomia-template:latest
+- [direnv](https://github.com/direnv/direnv), [nix](https://github.com/NixOS/nix)
+
+```bash
+# Get started.
+sudo docker run --rm -it --privileged ghcr.io/eunomia-bpf/eunomia-template:latest
+sudo apt update && sudo apt install -y direnv
+curl -sfL https://direnv.net/install.sh | bash  # sh <(curl -L https://nixos.org/nix/install) --daemon
+direnv allow
+# Clone repository.
+git clone --depth 1 https://github.com/Asher459/st_eunomia.git
+# Install dependencies.
+sudo apt update && \
+sudo apt install -y --no-install-recommends libelf1 libelf-dev zlib1g-dev make clang llvm
+# Build the project.
+make build
+# Run the project.
+ecli run src/package.json
+
+# Or run with Github Packages locally.
+docker run --rm -it --privileged -v $(pwd):/examples ghcr.io/eunomia-bpf/eunomia-template:latest
+```
 
 ## 2.2 功能测试
 
@@ -50,6 +96,6 @@ Linux主机eBPF监控。
 
 ## 2.4 性能测试
 
-# Usage
+# 3. Usage
 
 Explain how to use script codes to accomplish unit and performance tests.
