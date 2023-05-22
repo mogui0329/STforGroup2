@@ -73,8 +73,11 @@ Dependencies:
 - [direnv](https://github.com/direnv/direnv), [nix](https://github.com/NixOS/nix)
 
 ```bash
-# Get started.
+# 1. Deploy the project on Docker.
 sudo docker run --rm -it --privileged ghcr.io/eunomia-bpf/eunomia-template:latest
+
+# 2. Deploy the project on local host.
+# Get started.
 sudo apt update && sudo apt install -y direnv
 curl -sfL https://direnv.net/install.sh | bash  # sh <(curl -L https://nixos.org/nix/install) --daemon
 direnv allow
@@ -92,7 +95,29 @@ ecli run src/package.json
 docker run --rm -it --privileged -v $(pwd):/examples ghcr.io/eunomia-bpf/eunomia-template:latest
 ```
 
+Deployment test on Docker is failed, images as below.
+
+![docker run](./images/1.png)
+
+![docker failed](images/2.png)
+
+Here are deployment test on local host.
+
 ## 2.2 功能测试
+
+### 2.2.1 测试目的
+
+
+### 2.2.2 测试工具
+
+
+### 2.2.3 测试任务
+
+
+### 2.2.4 测试内容与步骤
+
+
+### 2.2.5 结果展示
 
 ## 2.3 单元测试
 
